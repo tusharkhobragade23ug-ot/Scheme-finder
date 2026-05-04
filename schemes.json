@@ -1,0 +1,23 @@
+[
+  {
+    "name": "VJNT Student Scholarship",
+    "caste": "vjnt",
+    "occupation": "student",
+    "incomeLimit": 150000,
+    "description": "Scholarship for vjnt students"
+  },
+  {
+    "name": "Ayushman Bharat",
+    "caste": "any",
+    "occupation": "any",
+    "incomeLimit": 50000,
+    "description": "Health insurance scheme"
+  },
+
+  {
+    "name": "Shiv Bhojan Yojana",
+    "occupation": "any",
+    "incomeLimit": 10000,
+    "description": "Affordable food scheme in Maharashtra"
+  }
+]
