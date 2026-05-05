@@ -48,13 +48,16 @@
 
 <div class="mb-3">
   <label class="form-label">Occupation:</label>
-  <select id="occupation" class="form-select" onchange="findSchemes()">
+  <select id="occupation" class="form-select">
+    <option value="">-- Select Occupation --</option>
     <option value="student">Student</option>
     <option value="farmer">Farmer</option>
   </select>
 </div>
 
-<button class="btn btn-primary mb-3 w-100" onclick="findSchemes()">Find Schemes</button>
+<button class="btn btn-primary mb-3 w-100" onclick="findSchemes()">
+  Find Schemes
+</button>
 
 </div>
 
