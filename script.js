@@ -1,0 +1,51 @@
+window.findSchemes = function () {
+
+  let income = parseInt(document.getElementById("income").value) || 0;
+  let occupation = document.getElementById("occupation").value.toLowerCase();
+  let caste = document.getElementById("caste").value.toLowerCase();
+  let disability = document.getElementById("disability").value.toLowerCase();
+
+  fetch("./schemes.json")
+    .then(response => response.json())
+    .then(data => {
+
+      let results = data.filter(scheme => {
+
+        if (income > scheme.incomeLimit) return false;
+
+        if (scheme.caste && scheme.caste !== "any" && scheme.caste !== caste)
+          return false;
+
+        if (scheme.occupation && scheme.occupation !== "any" && scheme.occupation !== occupation)
+          return false;
+
+        if (scheme.disability && scheme.disability !== disability)
+          return false;
+
+        return true;
+      });
+
+      let output = "";
+
+      if (results.length === 0) {
+        output = "<div class='scheme-box'>No schemes found</div>";
+      } else {
+        results.forEach(scheme => {
+          output += `
+          <div class="scheme-box">
+            <h4>${scheme.name}</h4>
+            <p>${scheme.description}</p>
+            <a href="${scheme.link || '#'}" target="_blank" class="scheme-btn">
+              View Full Details
+            </a>
+          </div>
+          `;
+        });
+      }
+
+      document.getElementById("result").innerHTML = output;
+    })
+    .catch(error => {
+      console.log("ERROR:", error);
+    });
+}
