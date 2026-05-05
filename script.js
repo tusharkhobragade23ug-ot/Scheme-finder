@@ -1,8 +1,15 @@
 function findSchemes() {
-  let income = parseInt(document.getElementById("income").value);
-  let occupation = document.getElementById("occupation").value.toLowerCase();
-  let caste = document.getElementById("caste").value.toLowerCase();
-  let disability = document.getElementById("disability").value.toLowerCase();
+
+  let income = parseInt(document.getElementById("income").value) || 0;
+
+  let occupation = document.getElementById("occupation").value;
+  let caste = document.getElementById("caste").value;
+  let disability = document.getElementById("disability").value;
+
+  // safe lowercase
+  occupation = occupation ? occupation.toLowerCase() : "";
+  caste = caste ? caste.toLowerCase() : "";
+  disability = disability ? disability.toLowerCase() : "";
 
   fetch("schemes.json")
     .then(response => response.json())
@@ -10,18 +17,18 @@ function findSchemes() {
 
       let results = data.filter(scheme => {
 
-        // 🔴 MAIN FILTER → income
+        // income filter
         if (income > scheme.incomeLimit) return false;
 
-        // optional caste
-        if (scheme.caste && scheme.caste !== "any" && scheme.caste !== caste)
+        // caste filter
+        if (caste && scheme.caste !== "any" && scheme.caste !== caste)
           return false;
 
-        // optional occupation
-        if (scheme.occupation && scheme.occupation !== "any" && scheme.occupation !== occupation)
+        // occupation filter
+        if (occupation && scheme.occupation !== "any" && scheme.occupation !== occupation)
           return false;
 
-        // optional disability
+        // disability filter
         if (scheme.disability && scheme.disability !== disability)
           return false;
 
@@ -31,22 +38,24 @@ function findSchemes() {
       let output = "";
 
       if (results.length === 0) {
-        output += `
-  <div class="scheme-box">
-    <h4>${scheme.name}</h4>
-    <p>${scheme.description}</p>
-    <small>${scheme.details || ""}</small><br>
-
-    <a href="${scheme.link}" target="_blank" class="scheme-btn">
-      View Full Details
-    </a>
-  </div>
-`;
+        output = "<div class='scheme-box'>No schemes found</div>";
+      } else {
+        results.forEach(scheme => {
+          output += `
+            <div class="scheme-box">
+              <h4>${scheme.name}</h4>
+              <p>${scheme.description}</p>
+              <a href="${scheme.link}" target="_blank" class="scheme-btn">
+                View Full Details
+              </a>
+            </div>
+          `;
+        });
       }
 
       document.getElementById("result").innerHTML = output;
     })
     .catch(error => {
-      console.log("ERROR:", error);
+      console.error("ERROR:", error);
     });
 }
