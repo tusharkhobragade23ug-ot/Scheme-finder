@@ -4,20 +4,32 @@
     "caste": "vjnt",
     "occupation": "student",
     "incomeLimit": 150000,
-    "description": "Scholarship for vjnt students"
+    "description": "Scholarship for VJNT students",
+    "link": "https://www.myscheme.gov.in/schemes/pmsvs-maharashtra"
   },
   {
     "name": "Ayushman Bharat",
     "caste": "any",
     "occupation": "any",
-    "incomeLimit": 50000,
-    "description": "Health insurance scheme"
+    "incomeLimit": 500000,
+    "description": "Health insurance scheme",
+    "link": "https://abdm.gov.in/"
   },
-
+  {
+    "name": "State Post-Matric Scholarship For Disabled",
+    "caste": "any",
+    "occupation": "student",
+    "incomeLimit": 100000,
+    "disability": "yes",
+    "description": "Financial assistance for disabled students",
+    "link": "https://www.myscheme.gov.in/schemes/spmsd"
+  },
   {
     "name": "Shiv Bhojan Yojana",
+    "caste": "any",
     "occupation": "any",
-    "incomeLimit": 10000,
-    "description": "Affordable food scheme in Maharashtra"
+    "incomeLimit": 100000,
+    "description": "Affordable food scheme",
+    "link": "https://mahafood.gov.in/en/scheme/shivbhojan/"
   }
 ]
