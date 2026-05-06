@@ -1,39 +1,28 @@
-console.log("NEW JS LOADED");
-
 window.findSchemes = function () {
 
-  let incomeInput = document.getElementById("income").value;
-  let income = parseInt(incomeInput) || 0;
-  let caste = document.getElementById("caste").value.toLowerCase();
-  let occupation = document.getElementById("occupation").value.toLowerCase();
-  let disability = document.getElementById("disability").value.toLowerCase();
+  let income = parseInt(document.getElementById("income").value) || 0;
 
-  //  Prevent empty search
-  if (!incomeInput) {
-    document.getElementById("result").innerHTML =
-      "<div class='scheme-box'>Please enter income</div>";
-    return;
-  }
+  let occupation = document.getElementById("occupation").value.toLowerCase();
+  let caste = document.getElementById("caste").value.toLowerCase();
+  let disability = document.getElementById("disability").value.toLowerCase();
 
   fetch("https://tusharkhobragade23ug-ot.github.io/Scheme-finder/schemes.json")
     .then(response => response.json())
     .then(data => {
 
       let results = data.filter(scheme => {
-          console.log(scheme.name, "CHECKING...");
 
-        //  income
+        // income
         if (income > scheme.incomeLimit) return false;
 
-        //  caste 
+        // caste
         if (caste && scheme.caste !== "any" && scheme.caste !== caste)
           return false;
 
-        //  occupation 
+        // occupation
         if (occupation && scheme.occupation !== "any" && scheme.occupation !== occupation)
           return false;
 
-        //  disability 
         if (disability === "yes") {
           if (scheme.disability !== "yes") return false;
         }
@@ -43,8 +32,6 @@ window.findSchemes = function () {
 
         return true;
       });
-
-      console.log("RESULTS:", results);
 
       let output = "";
 
