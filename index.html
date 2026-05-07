@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scheme Finder</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container mt-5">
+
+<h1 class="text-center">Maharashtra Government Scheme Finder</h1>
+
+<p class="text-center text-muted">
+  Enter your details to find eligible schemes
+</p>
+
+<div class="card p-4 shadow-sm">
+
+  <!-- Income -->
+  <div class="mb-3">
+    <label>Income:</label>
+    <input type="number" id="income" class="form-control" placeholder="Enter income">
+  </div>
+
+  <!-- Caste -->
+  <div class="mb-3">
+    <label>Caste:</label>
+    <select id="caste" class="form-select">
+      <option value="">Select</option>
+      <option value="general">General</option>
+      <option value="obc">OBC</option>
+      <option value="sc">SC</option>
+      <option value="st">ST</option>
+      <option value="vjnt">VJNT</option>
+    </select>
+  </div>
+
+  <!-- Disability -->
+  <div class="mb-3">
+    <label>Disability:</label>
+    <select id="disability" class="form-select">
+      <option value="">Select</option>
+      <option value="no">No</option>
+      <option value="yes">Yes</option>
+    </select>
+  </div>
+
+  <!-- Occupation -->
+  <div class="mb-3">
+    <label>Occupation:</label>
+    <select id="occupation" class="form-select">
+      <option value="">Select</option>
+      <option value="student">Student</option>
+      <option value="farmer">Farmer</option>
+    </select>
+  </div>
+
+  <!-- Age -->
+  <div class="mb-3">
+    <label>Age:</label>
+    <input type="number" id="age" class="form-control" placeholder="Enter age">
+  </div>
+
+  <!-- Gender -->
+  <div class="mb-3">
+    <label>Gender:</label>
+    <select id="gender" class="form-select">
+      <option value="">Select</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+  </div>
+
+  <!-- Marital Status -->
+  <div class="mb-3">
+    <label>Marital Status:</label>
+    <select id="maritalStatus" class="form-select">
+      <option value="">Select</option>
+      <option value="single">Single</option>
+      <option value="married">Married</option>
+      <option value="widow">Widow</option>
+    </select>
+  </div>
+
+  <!-- Ration Category -->
+  <div class="mb-3">
+    <label>Ration Category:</label>
+    <select id="ration" class="form-select">
+      <option value="">Select</option>
+      <option value="aay">AAY (Antyodaya)</option>
+      <option value="phh">PHH (Priority Household)</option>
+      <option value="bpl">BPL</option>
+      <option value="apl">APL</option>
+    </select>
+  </div>
+
+  <!-- Button -->
+  <button class="btn btn-primary w-100" onclick="findSchemes()">
+    Find Schemes
+  </button>
+
+</div>
+
+<h3 class="mt-4">Results</h3>
+<div id="result"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

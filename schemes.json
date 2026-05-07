@@ -1,0 +1,72 @@
+[
+  {
+    "name": "VJNT Student Scholarship",
+    "caste": "vjnt",
+    "occupation": "student",
+    "incomeLimit": 150000,
+    "disability": "any",
+    "gender": "any",
+    "maritalStatus": "any",
+    "ageMin": 0,
+    "ageMax": 100,
+    "rationCategory": "any",
+    "description": "Scholarship for VJNT students",
+    "link": "https://www.myscheme.gov.in/schemes/pmsvs-maharashtra"
+  },
+  {
+    "name": "Ayushman Bharat",
+    "caste": "any",
+    "occupation": "any",
+    "incomeLimit": 500000,
+    "disability": "any",
+    "gender": "any",
+    "maritalStatus": "any",
+    "ageMin": 0,
+    "ageMax": 100,
+    "rationCategory": "any",
+    "description": "Health insurance scheme",
+    "link": "https://abdm.gov.in/"
+  },
+  {
+    "name": "State Post-Matric Scholarship For Disabled",
+    "caste": "any",
+    "occupation": "student",
+    "incomeLimit": 100000,
+    "disability": "yes",
+    "gender": "any",
+    "maritalStatus": "any",
+    "ageMin": 0,
+    "ageMax": 100,
+    "rationCategory": "any",
+    "description": "Financial assistance for disabled students",
+    "link": "https://www.myscheme.gov.in/schemes/spmsd"
+  },
+  {
+    "name": "Shiv Bhojan Yojana",
+    "caste": "any",
+    "occupation": "any",
+    "incomeLimit": 100000,
+    "disability": "any",
+    "gender": "any",
+    "maritalStatus": "any",
+    "ageMin": 0,
+    "ageMax": 100,
+    "rationCategory": "phh",
+    "description": "Affordable food scheme",
+    "link": "https://mahafood.gov.in/en/scheme/shivbhojan/"
+  },
+  {
+    "name": "Indira Gandhi National Widow Pension Scheme",
+    "caste": "any",
+    "occupation": "any",
+    "incomeLimit": 100000,
+    "disability": "any",
+    "gender": "female",
+    "maritalStatus": "widow",
+    "ageMin": 40,
+    "ageMax": 79,
+    "rationCategory": "bpl",
+    "description": "₹1500/month pension for widows (40–79 years, BPL families)",
+    "link": "https://www.myscheme.gov.in/"
+  }
+]
